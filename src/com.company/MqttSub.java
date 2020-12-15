@@ -5,6 +5,7 @@ import org.eclipse.paho.client.mqttv3.*;
 public class MqttSub implements MqttCallback {
 
     MqttClient client;
+    String topic = "Tempa";
 
     public void subTest() throws MqttException {
 
@@ -24,21 +25,30 @@ public class MqttSub implements MqttCallback {
     @Override
     public void connectionLost(Throwable throwable) {
     }
+
+
     @Override
     public void messageArrived(String s, MqttMessage mqttMessage) throws Exception {
         MqttMessage reply = new MqttMessage(mqttMessage.getPayload());
+        new MqttMessage(reply.getPayload());
+
+        new MqttMessage("+".getBytes());
+        new MqttMessage("-".getBytes());
+
+        MqttMessage reply1 = new MqttMessage("+".getBytes());
+        MqttMessage reply2 = new MqttMessage("-".getBytes());
 
         String content = new String(reply.getPayload());
 
         int temp = Integer.parseInt(content);
 
-
-        if(temp > 22){
-            client.publish("Tempa",);
+        if(temp <= 22){
+            client.publish(this.topic,reply1);
+            //System.out.println(reply1 + " +");
         }else{
-            client.publish("Tempa",reply);
+            client.publish(this.topic,reply2);
+           //System.out.println(reply1 + " -");
         }
-
 
 
 
@@ -54,6 +64,9 @@ public class MqttSub implements MqttCallback {
        // int temperature = Integer.parseInt(message);
 
     }
+
+
+
 
     @Override
     public void deliveryComplete(IMqttDeliveryToken iMqttDeliveryToken) {
