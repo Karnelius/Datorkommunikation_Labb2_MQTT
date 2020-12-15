@@ -2,6 +2,9 @@ package com.company;
 
 import org.eclipse.paho.client.mqttv3.*;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class TempLog implements MqttCallback {
 
     MqttClient client;
@@ -29,6 +32,19 @@ public class TempLog implements MqttCallback {
 
     @Override
     public void messageArrived(String s, MqttMessage mqttMessage) throws Exception {
+
+
+
+        //För att skriva. Vi kan bryta ut i metod.
+        try {
+            FileWriter myWriter = new FileWriter("filename.txt");
+            myWriter.write("exempel");
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
     }
 
     @Override
