@@ -29,10 +29,10 @@ public class TempLog implements MqttCallback {
     }
 
     private void writeToLog(String date, String topic, String message) {
-        String logline = date + ", " + topic + ", " + message + "\n";
+        String logLine = date + ", " + topic + ", " + message + "\n";
         try {
             FileWriter myWriter = new FileWriter("logger.txt", true);
-            myWriter.write(logline);
+            myWriter.write(logLine);
             myWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -41,6 +41,7 @@ public class TempLog implements MqttCallback {
     }
 
     //Metod för att returnera en clean sträng. Behövs eller inte?
+
     private String topicToCleanString (String s){
         if(s.equals("Daze/Temperature")){
             return "Temperature";
