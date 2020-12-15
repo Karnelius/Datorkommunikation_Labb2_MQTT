@@ -13,34 +13,3 @@ public class TempSensor {
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-/* mqtt.client.publish -->
-
-if(random>=22)
-return "-" + " " +  "(" + random + "'c)";
-else return "+" + " " + "(" + random + "'c)";
-
-
-
-    static void timerTimer() {
-        TimerTask task = new TimerTask() {
-            public void run() {
-                MqttClients.mqtt();
-            }
-        };
-        Timer timer = new Timer();
-        long delay = 0;
-        long intervalPeriod = 1000;
-        timer.scheduleAtFixedRate(task, delay, intervalPeriod);
-
-    }*/

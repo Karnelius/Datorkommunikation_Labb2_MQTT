@@ -8,14 +8,12 @@ public class MqttClients extends MqttSub {
 
     public static void mqtt() throws InterruptedException {
 
-        String topic = "Tempa1";
+        String topic = "Daze/Temperature";
         String content = String.valueOf(TempSensor.tempRandomizer());
         int qos = 2;
         String broker = "tcp://broker.hivemq.com:1883";
-        String clientId = "Sensor";
-
+        String clientId = "DazeTempSensor";
         MemoryPersistence persistence = new MemoryPersistence();
-
 
         try {
             MqttClient sampleClient = new MqttClient(broker, clientId, persistence);
