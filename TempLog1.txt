@@ -1,0 +1,1 @@
+Datetime:  org.eclipse.paho.client.mqttv3.MqttToken@3be17bca // Source: yyyy // Value:  aaaa 

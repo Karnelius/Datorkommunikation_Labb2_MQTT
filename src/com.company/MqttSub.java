@@ -51,14 +51,6 @@ public class MqttSub implements MqttCallback {
         }
 
 
-
-
-
-
-
-
-
-
        // String message = new String(mqttMessage.getPayload());
         //System.out.println("Got temp: " + new String(mqttMessage.getPayload()));
        // int temperature = Integer.parseInt(message);

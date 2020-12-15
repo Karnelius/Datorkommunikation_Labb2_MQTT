@@ -2,6 +2,7 @@ package com.company;
 
 import org.eclipse.paho.client.mqttv3.*;
 
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -9,7 +10,7 @@ public class TempLog implements MqttCallback {
 
     MqttClient client;
 
-    public void run() throws MqttException {
+    public void logToFile() throws MqttException {
 
         try {
             client = new MqttClient("tcp://broker.hivemq.com:1883", "dfsdfZache");
@@ -37,8 +38,11 @@ public class TempLog implements MqttCallback {
 
         //För att skriva. Vi kan bryta ut i metod.
         try {
-            FileWriter myWriter = new FileWriter("filename.txt");
-            myWriter.write("exempel");
+
+            FileWriter myWriter = new FileWriter("TempLog111.txt");
+            BufferedWriter buffW = new BufferedWriter(myWriter);
+            myWriter.write("Datetime: " + " " + "xxx" + " "  + "//" + " "  + "Source: " + "yyyy" + " "  + "//" + " " + "Value: " + mqttMessage.toString());
+            buffW.newLine();
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
         } catch (IOException e) {
