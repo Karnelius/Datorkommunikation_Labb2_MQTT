@@ -3,10 +3,10 @@ package com.company;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
-public class MqttClients extends MqttSub {
+public class TempClients extends SubController {
 
 
-    public static void mqtt() throws InterruptedException {
+    public static void client() throws InterruptedException {
 
         String topic = "Daze/Temperature";
         String content = String.valueOf(TempSensor.tempRandomizer());
@@ -20,7 +20,6 @@ public class MqttClients extends MqttSub {
             MqttConnectOptions connOpts = new MqttConnectOptions();
             connOpts.setCleanSession(false);
             sampleClient.connect(connOpts);
-            //System.out.println("Publishing message: " + content);
             MqttMessage message = new MqttMessage(content.getBytes());
             message.setQos(qos);
             sampleClient.publish(topic, message);

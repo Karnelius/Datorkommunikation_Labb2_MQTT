@@ -2,21 +2,20 @@ package com.company;
 
 import org.eclipse.paho.client.mqttv3.*;
 
-public class Main extends MqttSub {
-
+public class Main extends SubController {
+    //Used to run all the modules at the same time.
 
     public static void main(String[] args) throws MqttException, InterruptedException {
 
-        MqttSub x = new MqttSub();
+        SubController x = new SubController();
         TempLog y = new TempLog();
 
         y.logToFile();
 
         do {
-            MqttClients.mqtt();
-            x.subTest();
+            TempClients.client();
+            x.subscriber();
         } while (true);
-
     }
 }
 

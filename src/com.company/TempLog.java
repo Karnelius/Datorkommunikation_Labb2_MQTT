@@ -12,7 +12,7 @@ public class TempLog implements MqttCallback {
     MqttClient client;
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 
-    public void logToFile() throws MqttException {
+    public void logToFile() {
 
         try {
             client = new MqttClient("tcp://broker.hivemq.com:1883", "DazeLog");
@@ -40,12 +40,10 @@ public class TempLog implements MqttCallback {
 
     }
 
-    //Metod för att returnera en clean sträng. Behövs eller inte?
-
-    private String topicToCleanString (String s){
-        if(s.equals("Daze/Temperature")){
+    private String topicToCleanString(String s) {
+        if (s.equals("Daze/Temperature")) {
             return "Temperature";
-        }else return "Controller";
+        } else return "Controller";
     }
 
     @Override
@@ -54,7 +52,7 @@ public class TempLog implements MqttCallback {
 
 
     @Override
-    public void messageArrived(String s, MqttMessage mqttMessage) throws Exception {
+    public void messageArrived(String s, MqttMessage mqttMessage) {
         String date = LocalDateTime.now().format(formatter);
         writeToLog(date, topicToCleanString(s), mqttMessage.toString());
 

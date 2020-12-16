@@ -2,12 +2,12 @@ package com.company;
 
 import org.eclipse.paho.client.mqttv3.*;
 
-public class MqttSub implements MqttCallback {
+public class SubController implements MqttCallback {
 
     MqttClient client;
     String topic = "Daze/Control";
 
-    public void subTest() throws MqttException {
+    public void subscriber() throws MqttException {
 
         try {
             client = new MqttClient("tcp://broker.hivemq.com:1883", "DazeControl");
@@ -49,12 +49,6 @@ public class MqttSub implements MqttCallback {
             client.publish(this.topic, reply1);
             //System.out.println(reply1 + " -");
         }
-
-
-        // String message = new String(mqttMessage.getPayload());
-        //System.out.println("Got temp: " + new String(mqttMessage.getPayload()));
-        // int temperature = Integer.parseInt(message);
-
     }
 
 
@@ -62,16 +56,6 @@ public class MqttSub implements MqttCallback {
     public void deliveryComplete(IMqttDeliveryToken iMqttDeliveryToken) {
 
     }
-
-    private String setTemperatureControl(String temp) {
-        int check = Integer.parseInt(temp);
-        if (check < 22.0) {
-            return "+";
-        } else {
-            return "-";
-        }
-    }
-
 }
 
 
