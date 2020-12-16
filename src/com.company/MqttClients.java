@@ -18,7 +18,7 @@ public class MqttClients extends MqttSub {
         try {
             MqttClient sampleClient = new MqttClient(broker, clientId, persistence);
             MqttConnectOptions connOpts = new MqttConnectOptions();
-            connOpts.setCleanSession(true);
+            connOpts.setCleanSession(false);
             sampleClient.connect(connOpts);
             //System.out.println("Publishing message: " + content);
             MqttMessage message = new MqttMessage(content.getBytes());
