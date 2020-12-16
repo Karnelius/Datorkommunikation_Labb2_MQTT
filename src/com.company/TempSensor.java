@@ -6,7 +6,7 @@ public class TempSensor {
 
     public static int tempRandomizer() throws InterruptedException {
         Random rand = new Random();
-        Thread.sleep(10000);
+        Thread.sleep(60000);
         do {
             return (rand.nextInt(25 - 15) + 15);
         } while (true);
