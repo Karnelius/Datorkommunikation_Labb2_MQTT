@@ -1,34 +1,24 @@
-2020/12/16 12:53:01, Temperature, 21
+2020/12/16 12:59:44, Temperature, 23
+2020/12/16 12:59:44, Controller, -
 
-2020/12/16 12:53:02, Temperature, 18
-2020/12/16 12:53:02, Controller, +
+2020/12/16 12:59:49, Temperature, 16
+2020/12/16 12:59:49, Controller, +
 
-2020/12/16 12:53:03, Temperature, 23
-2020/12/16 12:53:03, Controller, -
+2020/12/16 12:59:54, Temperature, 19
+2020/12/16 12:59:54, Controller, +
 
-2020/12/16 12:53:04, Temperature, 22
-2020/12/16 12:53:04, Controller, -
-2020/12/16 12:53:04, Controller, -
-2020/12/16 12:53:04, Controller, -
+2020/12/16 13:00:04, Temperature, 19
+2020/12/16 13:00:05, Controller, +
 
-2020/12/16 12:53:06, Temperature, 15
-2020/12/16 12:53:06, Controller, +
-2020/12/16 12:53:06, Controller, +
+2020/12/16 13:00:10, Temperature, 18
+2020/12/16 13:00:10, Controller, +
 
-2020/12/16 12:53:07, Temperature, 18
-2020/12/16 12:53:07, Controller, +
+2020/12/16 13:00:15, Temperature, 16
+2020/12/16 13:00:15, Controller, +
 
-2020/12/16 12:53:08, Temperature, 15
-2020/12/16 12:53:08, Controller, +
+2020/12/16 13:00:25, Temperature, 22
+2020/12/16 13:00:25, Controller, -
 
-2020/12/16 12:53:09, Temperature, 18
-2020/12/16 12:53:09, Controller, +
+2020/12/16 13:00:30, Temperature, 20
+2020/12/16 13:00:30, Controller, +
 
-2020/12/16 12:53:10, Temperature, 21
-
-2020/12/16 12:53:11, Temperature, 19
-2020/12/16 12:53:11, Controller, +
-2020/12/16 12:53:11, Controller, +
-
-2020/12/16 12:53:13, Temperature, 23
-2020/12/16 12:53:13, Controller, -
